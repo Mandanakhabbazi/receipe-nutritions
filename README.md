@@ -13,8 +13,6 @@ The purpose of this project is to create a dataset in which various diet recipes
 
 [https://zestfuldata.com/](https://zestfuldata.com/)
 
-[https://www.mycookbook.io/](https://www.mycookbook.io/)
-
 [https://tasty.co/](https://tasty.co/)
 
 [https://www.edamam.com/](https://www.edamam.com/)
