@@ -7,3 +7,24 @@ The World's Health Organization generated basic principles of what constitutes a
 The purpose of this project is to create a dataset in which various diet recipes are evaluated in terms of nutrients.
 
 ## List of data sources
+[https://spoonacular.com/](https://spoonacular.com/)
+
+[https://www.themealdb.com/](https://www.themealdb.com/)
+
+[https://zestfuldata.com/](https://zestfuldata.com/)
+
+[https://www.mycookbook.io/](https://www.mycookbook.io/)
+
+[https://tasty.co/](https://tasty.co/)
+
+[https://www.edamam.com/](https://www.edamam.com/)
+
+[https://www.yummly.com/](https://www.yummly.com/)
+
+[https://www.bigoven.com/](https://www.bigoven.com/)
+
+[https://www.fatsecret.com/](https://www.fatsecret.com/)
+
+[https://www.nutritionix.com/](https://www.nutritionix.com/)
+
+[https://www.hellofresh.com/](https://www.hellofresh.com/)
