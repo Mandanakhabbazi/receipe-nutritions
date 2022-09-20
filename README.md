@@ -41,5 +41,5 @@ So on the Edamam website you can get 10,000 API calls per month and 10 per minut
 
 According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. This shows that new data has recently been generated and added to the website. 
 
-After searching on Reddit, we found that spoonacular, edamam, and upcitemdb have endpoints for reading food information. 
+After searching on Reddit, we read that users of the Edamam API found sufficient endpoints for reading food information. 
 
