@@ -37,3 +37,9 @@ After this, we looked into other ways to obtain data, like API's and datasets. O
 So on the Edamam website you can get 10,000 API calls per month and 10 per minute for free. We assume that this is enough for the data we want to obtain so we decided to sign up for the API. We created an account which gave us a personal ID and applicaion keys.
 ![image](https://user-images.githubusercontent.com/90378626/191082706-1ebe7d1a-52b5-4270-bc4e-024ce573cdb3.png)
 
+## Mapping the data context
+
+According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. This shows that new data has recently been generated and added to the website. 
+
+After searching on Reddit, we found that spoonacular, edamam, and upcitemdb have endpoints for reading food information. 
+
