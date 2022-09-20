@@ -43,3 +43,5 @@ According to archive.org, the Edamam website has been changed 616 times between 
 
 After searching on Reddit, we read that users of the Edamam API found sufficient endpoints for reading food information. 
 
+Unfortunately, there is always the possibility of something happening to the data source that will prevent you from using it (e.g. website removal, discontination of an API). In this case, we will use another big food data base; https://spoonacular.com/
+
