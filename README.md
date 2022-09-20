@@ -47,6 +47,6 @@ Since we are using an API instead of web scraping, we do not have issues with al
 
 This is half of the calls that you can do today. This can be due to more data being availible right now for example. However, being able to get more data for free each month does not seem like a problem, it rather is a positive note.
 
-According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. However, we see that over time the website is stable and did not change much over time. Therefore, the possibility of the sebsite shutting down is very small. There is a possibility that we can not access the API anymore (maybe after a month, because we exceed the limit of calls for free), however, we can always try to make another account with someone else's email address and still access the API we need for the project.
+According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. However, we see that over time the website is stable and did not change much over time. Therefore, the possibility of the website shutting down is very small. There is a possibility that we can not access the API anymore (maybe after a month, because we exceed the limit of calls for free), however, we can always try to make another account with someone else's email address and still access the API we need for the project.
 
 
