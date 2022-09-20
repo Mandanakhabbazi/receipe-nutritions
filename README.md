@@ -41,14 +41,12 @@ So on the Edamam website you can get 10,000 API calls per month and 10 per minut
 
 After searching on Reddit, we read that users of the Edamam API found sufficient endpoints for reading food information. 
 
-Unfortunately, there is always the possibility of something happening to the data source that will prevent you from using it (e.g. website removal, discontination of an API). In this case, we will use another big food data base; https://spoonacular.com/
-
 Since we are using an API instead of web scraping, we do not have issues with algorithms. This means it was not necessary to check the websites multiple times and we could get started right away with obtaining data. We did want to inspect the website over time, so we searched on archive.org. The website seemed to be kind of the same over time. We did find out that the API calls per month in 2018 could not exceed 5000. 
 ![image](https://user-images.githubusercontent.com/90378626/191202417-acac68e2-e0c8-41a4-b1ff-1112239412c7.png)
 
 
 This is half of the calls that you can do today. This can be due to more data being availible right now for example. However, being able to get more data for free each month does not seem like a problem, it rather is a positive note.
 
-According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. We see that over time the website is stable and did not change much over time. This makes the possibility that the website will shut down very small. There is a possibility that we can not access the API anymore (maybe after a month, because we exceed the limit of calls for free), however, we can always try to make another account with someone else's email address and still access the API we need for the project.
+Unfortunately, there is always the possibility of something happening to the data source that will prevent you from using it (e.g. website removal, discontination of an API). According to archive.org, the Edamam website has been changed 616 times between June 6, 2011 and September 18, 2022. However, we see that over time the website is stable and did not change much over time. This makes the possibility that the website will shut down very small. There is a possibility that we can not access the API anymore (maybe after a month, because we exceed the limit of calls for free), however, we can always try to make another account with someone else's email address and still access the API we need for the project.
 
 
