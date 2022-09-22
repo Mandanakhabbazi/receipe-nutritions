@@ -27,6 +27,8 @@ The purpose of this project is to create a dataset in which various diet recipes
 
 [https://www.hellofresh.com/](https://www.hellofresh.com/)
 
+![image](https://user-images.githubusercontent.com/90378626/191676945-32a182ed-a75a-444f-be0d-a3cec6e23b41.png)
+
 
 ## Addressed challenges
 
