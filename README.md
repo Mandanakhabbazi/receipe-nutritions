@@ -7,28 +7,8 @@ The World's Health Organization generated basic principles of what constitutes a
 The purpose of this project is to create a dataset in which various diet recipes are evaluated, which are then compared to what is universal perceived as a healthy diet in terms of nutritions. Researchers can use this dataset to study what the effect of certain diets can be on the health of consumers. Also, marketeers can use this data to discover patterns of food combinations in recipes per diet, to perform a better STP strategy on certain food products. 
 
 ## List of data sources
-[https://spoonacular.com/](https://spoonacular.com/)
-
-[https://www.themealdb.com/](https://www.themealdb.com/)
-
-[https://zestfuldata.com/](https://zestfuldata.com/)
-
-[https://tasty.co/](https://tasty.co/)
-
-[https://www.edamam.com/](https://www.edamam.com/)
-
-[https://www.yummly.com/](https://www.yummly.com/)
-
-[https://www.bigoven.com/](https://www.bigoven.com/)
-
-[https://www.fatsecret.com/](https://www.fatsecret.com/)
-
-[https://www.nutritionix.com/](https://www.nutritionix.com/)
-
-[https://www.hellofresh.com/](https://www.hellofresh.com/)
 
 ![image](https://user-images.githubusercontent.com/90378626/191676945-32a182ed-a75a-444f-be0d-a3cec6e23b41.png)
-
 
 ## Addressed challenges
 
