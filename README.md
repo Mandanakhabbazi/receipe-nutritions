@@ -17,7 +17,6 @@ When we started to look for a source to get our data from, we first looked at a 
 After this, we looked into other ways to obtain data, like API's and datasets. Our idea was that if we looked into less popular food tracking / nutrition websites from the Netherlands, we have a bigger chance that the API is publicly available. This idea led us to the website https://www.edamam.com/, which has a big food data base and recipe API. We searched the website on Google Trends and found out that the website is most popular in France and the USA. We looked further and found out it is possible as a developer to get access to the API for free (https://developer.edamam.com/edamam-recipe-api). We figured that in our case it is easier to use the API, because it will save time and avoids legal issues.
 
 So on the Edamam website you can get 10,000 API calls per month and 10 per minute for free. We assume that this is enough for the data we want to obtain so we decided to sign up for the API. We created an account which gave us a personal ID and applicaion keys.
-![image](https://user-images.githubusercontent.com/90378626/191082706-1ebe7d1a-52b5-4270-bc4e-024ce573cdb3.png)
 
 ## Mapping the data context
 
