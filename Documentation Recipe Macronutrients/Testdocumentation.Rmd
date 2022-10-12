@@ -40,7 +40,7 @@ tab
 
 This dataset is a sample of the entire Edamam recipe API. The Recipe Search API (the endpoint this project uses) contains over 2.3 million recipes.As mentioned, the dataset contains a selection of recipes based on the diets we are interested in. All the recipes of all five diets are collected, which means the sample is representable looking at the diets independently. However, the total of 34,898 instances is not representative of the larger set, but this was not the goal of this data collection. The goal is to obtain data from each recipe of each diet independently.
 
-![fig1](fig/fig1.png)
+![figure1](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 34,898 instances have been collected for the raw data. The data have been saved into a .json output to be further processed. The code in the repository creates a dataset with for every recipe the health label, meal type, dish type, cuisine type and the accompanying macro-nutrients. The macro-nutrients are given in integer variables, this is so users are able to calculate with the numbers. The following tables give an explicit overview of the variables used in the code. 
@@ -71,7 +71,7 @@ hits of recipe????
 
 There is no information missing, however, the number of calories in some recipes seems to be wrong. The number seems oddly high. See the figure below for an example. Additionally, the data does not include a serving size, which could diminish the number of calories per serving. Thus, after checking the original source of the recipes there can be assumed that the information is not accurate, which means the number of calories is removed when collecting data from the API.
 
-![fig2](fig/fig2.png)
+![figure2](fig/figure2.png)
 
 ### 2.7 Are relationships between individual instances made explicit (e.g., users’ movie ratings, social network links)? If so, please describe how these relationships are made explicit. ###
 
