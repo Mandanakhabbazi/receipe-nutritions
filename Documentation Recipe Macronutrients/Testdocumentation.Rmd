@@ -1,0 +1,20 @@
+---
+title: "Documentation Recipe Macronutrients"
+author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# The healthiest diet: a comparison of recipes of various diets to what is universal perceived as healthy in terms of macronutrients #
+
+## 1. Motivation ##
+### 1.1 For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description. ### 
+
+```{r}
+
+
+```
