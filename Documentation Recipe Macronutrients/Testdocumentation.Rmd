@@ -40,16 +40,32 @@ tab
 
 This dataset is a sample of the entire Edamam recipe API. The Recipe Search API (the endpoint this project uses) contains over 2.3 million recipes.As mentioned, the dataset contains a selection of recipes based on the diets we are interested in. All the recipes of all five diets are collected, which means the sample is representable looking at the diets independently. However, the total of 34,898 instances is not representative of the larger set, but this was not the goal of this data collection. The goal is to obtain data from each recipe of each diet independently.
 
+![fig1](fig/fig1.png) _> werkt nog niet
+
 ```{r}
-![Figure 1](fig/Figure1.png)
+tab_nutrrientstructure <- matrix(c('String', 'String', 'Float', 'String'), ncol=2, byrow = TRUE)
+colnames(tab_nutrrientstructure) <- c('Data type', 'Description')
+rownames(tab_nutrrientstructure) <- c('uri', 'label', 'quantity', 'unit')
+rownames(tab_nutrrientstructure) <- ('Ontology identifier', 'Display label', 'Quantity of specific units', 'Units')
+tab_nutrrientstructure <- as.table(tab_nutrrientstructure)
+tab_nutrrientstructure
+
+tab <- matrix(c(2323, 10000, 10000, 4635, 7940), ncol=1, byrow=TRUE)
+colnames(tab) <- c('Numer of recipes available')
+rownames(tab) <- c('Keto', 'Vegan', 'Dash', 'Mediterranean', 'Paleo')
+tab <- as.table(tab)
+tab
+
+
 ```
 
-
-
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
+34,898 instances have been collected for the raw data. The data have been saved into a .json output to be further processed. The code in the repository creates a dataset with for every recipe the health label, meal type, dish type, cuisine type and the accompanying macro-nutrients. The macro-nutrients are given in integer variables, this is so users are able to calculate with the numbers. The following tables give an explicit overview of the variables used in the code. 
+
 TABELLEN INVOEGEN 
 
 ```{r}
+
 ```
 
 ### 2.5 Is there a label or target associated with each instance? If so, please provide a description. ###
