@@ -101,17 +101,16 @@ This dataset does not contain data that one could consider confidential. This is
 
 ### 2.11 Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? If so, please describe why. ###
 
-The dataset does not contain data that could be considered offensive, insulting, or threatening. The only thing that the dataset contains is  information about precise food measures, which might trigger feelings for people with an eating disorder. There is a possibility that the information can cause feelings of anxiety for this group of people.
+The dataset does not contain data that could be considered offensive, insulting, or threatening. The only thing that the dataset contains is information about precise food measures, which might trigger feelings for people with an eating disorder. There is a possibility that the information can cause feelings of anxiety for this group of people.
 
-### 2.12	Does the dataset relate to people? If not, you may skip the remaining questions in this section. ###
+### 2.12 Does the dataset relate to people? If not, you may skip the remaining questions in this section. ###
 
-The dataset does not relate to people. Therefore, questions 2.12 till 2.15 are not answered and have been removed.
-
+The dataset does not relate to people. Therefore, questions 2.12 till 2.15 are not answered and have been removed in the documentation. 
 
 ## 3. Collection Process ##
 ### 3.1 How was the data associated with each instance acquired? Was the data directly observable (e.g., raw text, movie ratings), reported by subjects (e.g., survey responses), or indirectly inferred/derived from other data (e.g., part-of-speech tags, model-based guesses for age or language)? If data was reported by subjects or indirectly inferred/derived from other data, was the data validated/verified? If so, please describe how. ###
 
-The data associated with each instance is acquired through the API from Edamam. Using the script for the (HIER HET PATH IN ZETTEN)  .json file of all the different diets, the data of the recipes with all the macronutrients can be viewed. To make it more clear, a table is provided for every diet in which the data of the different recipes can also be observed. 
+The data associated with each instance is acquired through the API from Edamam. The written script creates a .json file with all the raw data for all the 5 recipes. The scrip also creates 5 csv files for each diet to create a clear file t see which recipes belong to the selected diets. 
 
 ### 3.2	What mechanisms or procedures were used to collect the data (e.g., hardware apparatus or sensor, manual human curation, software program, software API)? How were these mechanisms or procedures validated? ###
 
