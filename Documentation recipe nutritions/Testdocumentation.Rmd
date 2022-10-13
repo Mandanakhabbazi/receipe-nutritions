@@ -129,6 +129,9 @@ The dataset does not relate to people, because the Edamam API does not contain a
 
 To obtain the final dataset, we carried out several pre-processing steps. First, we collected all recipes from each diet separately. These are stored in the following files: … Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type.  Finally, a loop was created in which the name of the recipe and the amounts of carbohydrates, fats and proteins were tabulated. Labels were created for mealtype, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As said before, the number of calories didn’t seem correct with the recipes, therefore the number of calories was deleted. The time for the recipe has not been add to the dataset because the main focus for this data set lays on the macronutrients and for users to see how many grams they consume if they make a ceretain recipe. 
 
+--> mactornutrients nient meegenoemn toevoegen
+
+
 ### 4.2	Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data. ###
 
 The file ‘X.json’ contains the complete raw data. --> GOEDE NAAM VAN FILE TOEVEOGEN
