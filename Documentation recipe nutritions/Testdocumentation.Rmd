@@ -116,12 +116,9 @@ The data associated with each instance is acquired through the API from Edamam. 
 
 As mentioned in the data collection, the API of Edamam was used to obtain the data of the different recipes of the diets. In order to validate this data, the handful of recipes and their labels and macronutrients were compared to the recipe on the site of Edamam. We also compared the recipe to the original site, which was provided within the API.   
 
-
 ### 3.3 If the dataset is a sample from a larger set, what was the sampling strategy (e.g., deterministic, probabilistic with specific sampling probabilities)? ###
 
-The dataset is a sample from a larger set obtained through deterministic sampling. Based on the site of (PlanKetogenic, z.d.) which contains the most researched diets worldwide, the most popular diets in the countries who use Edamam the most, were chosen. Also, a selection was made based on the type of dinner and the dish type. Only lunch/dinner type was considered in the dataset.
-
---> AANPASSEN NAAR WELKE DISHTYPES NU EN WELKE CUISINES 
+The dataset is a sample from a larger set obtained through deterministic sampling. Based on the site of (PlanKetogenic, z.d.) which contains the most researched diets worldwide, the most popular diets in the countries who use Edamam the most, were chosen and filtered for the dataset. For each diet the dataset is filtered on the macronutrients (fats, carbs and proteins) to be able to see how many grams each recipe contains. The data set is also filtered on lunch/dinner, the reason behind this filter is because people often choose to skip breakfast (Mohiuddin, 2018). The cuisine type is also added in order to see from which cuisine the recipe originates.  The dataset has been filtered for the first 8000 diets because the program won't be able to run the script otherwise. This makes it however not possible to automate the script. The created csv files for each diets are combined in one final csv file. 
 
 ### 3.4	Who was involved in the data collection process (e.g., students, crowdworkers, contractors) and how were they compensated (e.g., how much were crowdworkers paid)? ###
 
