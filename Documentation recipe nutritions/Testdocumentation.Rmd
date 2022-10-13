@@ -127,7 +127,7 @@ The dataset does not relate to people, because the Edamam API does not contain a
 ## 4. Preprocessing, cleaning, labeling ##
 ### 4.1 Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remainder of the questions in this section. ###
 
-To obtain the final dataset, we carried out several pre-processing steps. First, we collected all recipes from each diet separately. Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins. Labels were created for meal type, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. The time for the recipe has not been added to the dataset, because the main focus for this dataset lays on the macronutrients and for users to see how many grams they consume if they make a certain recipe.
+To obtain the final dataset, we carried out several pre-processing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the database without exposing the sensitive information. After the tokenisation, data collection could be started. We collected all recipes from each diet separately. This cannot be automated because the system crashes at call 8000. Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins. Labels were created for meal type, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and users can see how many grams they consume when making a particular recipe. The final dataset consists of merging the different csv files of the diets.
 
 --> mactornutrients nient meegenoemn toevoegen
 
@@ -147,7 +147,7 @@ The dataset has not yet been used for any tasks, but is available for future use
 
 ### 5.2	Is there a repository that links to any or all papers or systems that use the dataset? If so, please provide a link or other access point. ###
 
-There is no repository available yet for papers and systems that use the data scraped in this project. However, we have our repository that contains all the files and the dataset. The link is: https://github.com/Mandanakhabbazi/recipe-nutritions.git
+There is no repository available yet for papers and systems that use the data scraped in this project. However, we have our repository that contains all the files and the dataset. The link to this repository is: https://github.com/Mandanakhabbazi/recipe-nutritions.git
 
 ### 5.3	What (other) tasks could the dataset be used for? ###
 
@@ -159,8 +159,7 @@ There is nothing that might impact future uses.
 
 ### 5.5	Are there tasks for which the dataset should not be used? If so, please provide a description. ###
 
-The dataset should in no way be used to guide nutrition. It should only be used for research purposes.
-→ do not use it as the only guideline for nutrition (you also have vitamins etc.)
+While the dataset can be used as a dietary guide, it should not be used as a sole guideline, as it focuses only on the macronutrients carbohydrates, fats and proteins. Consumers should keep in mind that there are more nutrients for healthy living, such as vitamins.
 
 ## 6. Sources ##
 
