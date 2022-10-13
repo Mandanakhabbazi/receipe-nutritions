@@ -133,13 +133,13 @@ The dataset does not relate to people, because the Edamam API does not contain a
 
 To obtain the final dataset, we carried out several pre-processing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the database without exposing the sensitive information. This was done by configuring environment variables. 
 
-After the tokenisation, data collection could be started. We collected all recipes from each diet separately. This cannot be automated because the system crashes at call 8000. Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins.
+After the tokenisation, data collection could be started. We collected all recipes from each diet separately. This cannot be automated because the system crashes at call 8000. Then, for each diet, we collected the recipes we were interested in with respect to the meal type lunch/dinner. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins.
 
-Labels were created for meal type, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and users can see how many grams they consume when making a particular recipe. Therefore, micronutrients are also not included. The final dataset consists of merging the different csv files of the diets, which is saved in the file 'All_Diets.csv'.
+Labels were created for meal type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and users can see how many grams they consume when making a particular recipe. Therefore, micronutrients are also not included. The final dataset consists of merging the different csv files of the diets, which is saved in the file 'All_Diets.csv'.
 
 ### 4.2	Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data. ###
 
-The raw data have been saved in multiple files, according to the diets. The files are: 'keto_raw_data.json', 'dash_raw_data.json', 'vegan_raw_data.json', 'paleo_raw_data.json', and 'mediterranean_raw_data.json'.
+The raw data have been saved in multiple files, according to the diets. The files for this datacollection are: 'keto_raw_data.json', 'dash_raw_data.json', 'vegan_raw_data.json', 'paleo_raw_data.json', and 'mediterranean_raw_data.json'.
 
 ### 4.3	Is the software used to preprocess/clean/label the instances available? If so, please provide a link or other access point. ###
 
