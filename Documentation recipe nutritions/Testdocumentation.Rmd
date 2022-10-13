@@ -61,6 +61,11 @@ The code in the repository creates a dataset with for every recipe the health la
 TABELLEN INVOEGEN --> DOE IK VANAVOND
 ![Table1](fig/Nutrientstructure.png) 
 ![Table2](fig/Ingredientstructure.png) 
+![Table3](fig/Healthlabels1.png)
+![Table4](fig/Healthlabels2.png) 
+![Table5](fig/Healthlabels3.png) 
+![Table6](fig/Healthlabels4.png) 
+
 
 
 
