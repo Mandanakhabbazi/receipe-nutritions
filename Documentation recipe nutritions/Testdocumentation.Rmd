@@ -22,6 +22,9 @@ The dataset is created by team 12 from the course of Online Data Collection and 
 
 ### 1.3 Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number. ###
 
+This dataset was not created with funding from any organization or individual. Due to this fact, the data extraction code and datasets created by this team are entirely autonomous and made available to the public.
+
+
 ## 2. Composition ##
 ### 2.1 What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? Are there multiple types of instances (e.g., movies, users, and ratings; people and interactions between them; nodes and edges)? Please provide a description. ###
 Each instance in the dataset is a dinner recipe. These recipes will be categorized into the five most popular diets for the users from Edamam. The users who use Edamam the most are from Canada, Germany, France, the United Kingdom and India. Therefore the following five recipes will make the categorization; Keto diet, Mediterranean diet, Paleo diet, DASH diet and Vegan diet. These diets are the overall most popular in the countries stated above. The diets have multiple types of instances, namely the macronutrients. Those are categorized as fat, protein and carbs. For each recipe, the macronutrients are listed in the database. 
