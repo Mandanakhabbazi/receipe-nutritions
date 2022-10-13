@@ -127,18 +127,19 @@ The dataset does not relate to people, because the Edamam API does not contain a
 ## 4. Preprocessing, cleaning, labeling ##
 ### 4.1 Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remainder of the questions in this section. ###
 
-To obtain the final dataset, we carried out several pre-processing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the database without exposing the sensitive information. After the tokenisation, data collection could be started. We collected all recipes from each diet separately. This cannot be automated because the system crashes at call 8000. Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins. Labels were created for meal type, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and users can see how many grams they consume when making a particular recipe. The final dataset consists of merging the different csv files of the diets.
+To obtain the final dataset, we carried out several pre-processing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the database without exposing the sensitive information. This was done by configuring environment variables. 
 
---> mactornutrients nient meegenoemn toevoegen
+After the tokenisation, data collection could be started. We collected all recipes from each diet separately. This cannot be automated because the system crashes at call 8000. Then, for each diet, we collected the recipes we were interested in with respect to dinner and dish type. Finally, a loop was created tabulating diet type, recipe name, cuisine type and amounts of carbohydrates, fats and proteins.
 
+Labels were created for meal type, dish type and cuisine type. There were no missing values in the final data set, so no missing values were removed. As mentioned, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and users can see how many grams they consume when making a particular recipe. Therefore, micronutrients are also not included. The final dataset consists of merging the different csv files of the diets, which is saved in the file 'All_Diets.csv'.
 
 ### 4.2	Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data. ###
 
-The file ‘X.json’ contains the complete raw data. --> GOEDE NAAM VAN FILE TOEVEOGEN
+The raw data have been saved in multiple files, according to the diets. The files are: 'keto_raw_data.json', 'dash_raw_data.json', 'vegan_raw_data.json', 'paleo_raw_data.json', and 'mediterranean_raw_data.json'.
 
 ### 4.3	Is the software used to preprocess/clean/label the instances available? If so, please provide a link or other access point. ###
 
-This project makes no use of any additional tools to preprocess, clean, or label the data.
+For tokenisation, the steps were followed in the following link: https://tilburgsciencehub.com/building-blocks/store-and-document-your-data/store-data/environment-variables/
 
 ## 5. Uses ##
 ### 5.1	Has the dataset been used for any tasks already? If so, please provide a description. ###
