@@ -56,6 +56,8 @@ This dataset is a sample of the entire Edamam recipe API. The Recipe Search API 
 The code in the repository creates a dataset with for every recipe the health label, meal type, dish type, cuisine type and the accompanying macro-nutrients. The macro-nutrients are given in integer variables, this is so users are able to calculate with the numbers. The following tables give an explicit overview of the variables used in the code. 
 
 TABELLEN INVOEGEN --> DOE IK VANAVOND
+![Table1](fig/Nutrientstructure.png) 
+![Table2](fig/Ingredientstructure.png) 
 
 
 
