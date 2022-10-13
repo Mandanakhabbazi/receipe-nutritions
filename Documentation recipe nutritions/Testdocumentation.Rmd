@@ -86,20 +86,18 @@ There is no information missing, however, the number of calories in some recipes
 ### 2.7 Are relationships between individual instances made explicit (e.g., users’ movie ratings, social network links)? If so, please describe how these relationships are made explicit. ###
 
 The relationships between individual instances are made explicit by the link of the recipe to the original site from which the API gathered the information. These instances are identified under *source* and the link to the website under *url*. 
---> INVOEGEN 
 
 ### 2.8 Are there any recommended data splits (e.g., training, development/validation, testing)? If so, please provide a description of these splits, explaining the rationale behind them. ###
 
-The .json file contains all the collected raw data. With this dataset users are able to conduct their own dataset with the data they like to use. The NAAM file contains a dataset produced by the makers of this project to see how many grams each macronutrients contains for recipes. A recommended data split could be based on the quantity for the macronutrients based on specific diets users are following. Another split could be based on certain cuisine types users prefer. Other splits are also possible, the splits stated above are however recommended by the makers of the database with the thought in mind for the purpose of this dataset. 
+The .json file contains all the collected raw data. A recommended data split could be based on the quantity for the macronutrients based on specific diets users are following. Another split could be based on certain cuisine types users prefer. Other splits are also possible, the splits stated above are however recommended by the makers of the database with the thought in mind for the purpose of this dataset. 
 
 ### 2.9 Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)? If it links to or relies on external resources, a) are there guarantees that they will exist, and remain constant, over time; b) are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created); c) are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate. ###
 
-Each instance in the Edamam API is linked to an external source, which is a website URL. There is no guarantee that the external websites will keep existing over time, yet, all relevant information is already in the dataset. This means that in case of removal of an external source, there will be no data lost from the API. Moreover, the data that is collected and that is in the output table relies completely on  the Edamam API.
-
+Each instance in the Edamam API is linked to an external source, which is a website URL. There is no guarantee that the external websites will keep existing over time, yet, all relevant information is already in the dataset. This means that in case of removal of an external source, there will be no data lost from the API. Moreover, the data that is collected and that is in the output table relies completely on the Edamam API.
 
 ### 2.10 Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals non-public communications)? If so, please provide a description. ###
 
-This dataset does not contain data that one could consider confidential. This can be assumed because the data is publicly available on the Edamam API website. There is no information in the data that could trace back to private  information (personal data, locations etc.)
+This dataset does not contain data that one could consider confidential. This is based on the fact that the data is publicly available on the Edamam API website. There is no information in the data that could trace back to private information (personal data, locations etc.)
 
 ### 2.11 Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? If so, please describe why. ###
 
