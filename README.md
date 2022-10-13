@@ -7,10 +7,3 @@ Using the Edamame API, we created a code to generate a dataset with recipes from
 We wish you lots of joy using our Edamame API scraper :)
 
 ![image](https://user-images.githubusercontent.com/112401369/195605878-2ef87243-01b5-453f-b5e1-1890bb8515ef.png)
-
-
-## List of data sources
-
-![image](https://user-images.githubusercontent.com/90378626/191676945-32a182ed-a75a-444f-be0d-a3cec6e23b41.png)
-
-
