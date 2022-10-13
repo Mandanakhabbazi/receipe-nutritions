@@ -126,9 +126,7 @@ Only the students of this project were involved in the data collection process. 
 
 ### 3.5	Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created. ###
 
-The data collected for the project was collected in real time. The end and total dataset has been collected on the 13th of October. 
-
---> UITLEG WAAROM REAL TIME
+The data collected for the project was collected in real time. It is real time collected because it immediately available after collection. The end and total dataset has been collected on the 13th of October. 
 
 
 ### 3.6 Were any ethical review processes conducted (e.g., by an institutional review board)? If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation. ###
