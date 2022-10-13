@@ -122,7 +122,7 @@ The dataset is a sample from a larger set obtained through deterministic samplin
 
 ### 3.4	Who was involved in the data collection process (e.g., students, crowdworkers, contractors) and how were they compensated (e.g., how much were crowdworkers paid)? ###
 
-Only the students of this project were involved in the data collection process. There was no compensation because this was not applicable to this project. 
+Only the students of this project were involved in the data collection process. The instructor of the project and course did provided help during the data collection. The There was no compensation because this was not applicable to this project. 
 
 ### 3.5	Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created. ###
 
