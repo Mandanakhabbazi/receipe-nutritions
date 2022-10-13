@@ -65,6 +65,9 @@ TABELLEN INVOEGEN --> DOE IK VANAVOND
 ![Table4](fig/Healthlabels2.png) 
 ![Table5](fig/Healthlabels3.png) 
 ![Table6](fig/Healthlabels4.png) 
+![Table7](fig/Mealtypes.png) 
+![Table8](fig/Cuisinetype1.png) 
+![Table9](fig/Cuisinetype2.png) 
 
 
 
