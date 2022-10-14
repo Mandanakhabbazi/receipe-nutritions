@@ -3,9 +3,9 @@ title: "Documentation Recipe Macronutrients"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "`r Sys.Date()`"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -29,6 +29,8 @@ With this, we decided to include APIs and datasets and look at less popular food
 
 ```{r table1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
+Table: Overview of data sources.
+
 | Data source | Data extraction | Free access | Sufficient number of recipes available | Nutrition information available
 |-----------------------|:---------:|--------:|---------------:|-------------:|
 | https://www.taste.com/ | Web scraping | Yes | No | Yes |
@@ -63,6 +65,8 @@ For all 5 recipes, there is a different number of recipes available. Table 1 bel
 
 ```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
+Table: Number of instances.
+
 |                           | Number of recipes available |
 |---------------------------|:---------------------------:|
 | Keto                      | 2323                        |
@@ -70,7 +74,7 @@ tabl <- "
 | Dash                      | 10000                       |
 | Mediterranean             | 4635                        |
 | Paleo                     | 7940                        |
-| Total number of instances | 34898                       |
+| Total                     | 34898                       |
 "
 cat(tabl)
 ```
