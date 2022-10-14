@@ -17,11 +17,34 @@ knitr::opts_chunk$set(echo = TRUE)
 ## 1. Motivation ##
 ### 1.1 For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description. ### 
 
-Consuming a healthy diet throughout a person’s life helps prevent malnutrition in all its forms as well as a range of diet-related conditions and diseases (WHO, 2019). Recently, there are many types of diets available, all promising to offer the best and healthiest recipes to nourish a human body. While these recipes often include information on the nutritional value of these meals, the question remains whether sticking to these diets is really perceived as "healthy" and if using all the recommended recipes would actually provide your body with all the nutrients it needs. Many research has been done and many claims have been made about which diet is healthier than the other diet, but when you would break it down to nutrition, according to Cena and Calder (2020), a healthy diet consists of meals in which macronutrients (i.e., fats, proteins and carbohydrates) are consumed in appropriate proportions to support physiological and energetic needs of the body, because they provide the necessary energy for daily functioning. Additionally, micro nutrients (i.e., vitamins and minerals) are required in relatively small amounts for normal metabolism, development, growth and physiological functioning. However, the macronutrients are the three main sources of energy in food (Cena & Calder, 2020). Carbohydrates are mostly broken down in glucose and are the body’s primary energy source. Fat aids in the integrity of cell membranes, the storage of energy, the protection of organs, the production of certain hormones, and the absorption of fat-soluble vitamins. The main role of protein is to maintain lean body mass, develop new tissues, and repair existing ones. In terms of macronutrients, numerous diet recommendations have been made to maintain health and prevent diseases (Flat, 2001). According to Ryan-Harshman & Aldoori (2006), most dietary references suggest that adults in general should consume 45% to 65% of their calories from carbohydrates, 20% to 35% from fat, and 10% to 35% from protein. 
+Consuming a healthy diet throughout a person’s life helps prevent malnutrition in all its forms as well as a range of diet-related conditions and diseases (WHO, 2019). Recently, there are many types of diets available, all promising to offer the best and healthiest recipes to nourish a human body. While these recipes often include information on the nutritional value of these meals, the question remains whether sticking to these diets is really perceived as "healthy" and if using all the recommended recipes would actually provide your body with all the nutrients it needs.
 
-Because of the controversial opinion on which diet is perceived as healthy (and if certain diets are even healthy to follow) the aim of this project is to create a large dataset in which various recipes are displayed with the main macronutrients: carbohydrates, fats and proteins. Researchers can use this dataset to study the effect of certain diets on the health of consumers. Furthermore, marketeers can use the outcomes to discover patterns of macronutrients in the recipes of diets. This may help in improving the STP (Segmentation, Targeting, and Positioning) strategy of food manufacturing companies. Besides that, anyone who is interested in certain diets can extract information through the API about any recipe they are interested in.
+There has been a lot of research and claims about which diet is healthier than the other. When you would break it down by nutrition, according to Cena and Calder (2020), a healthy diet consists of meals in which macronutrients (i.e. fats, proteins and carbohydrates) are consumed in the right proportions to support the body's physiological and energetic needs. Indeed, macronutrients provide the necessary energy for daily functioning. Additionally, micro nutrients (i.e., vitamins and minerals) are required in relatively small amounts for normal metabolism, development, growth and physiological functioning. However, the macronutrients are the three main sources of energy in food (Cena & Calder, 2020). Carbohydrates are mostly broken down in glucose and are the body’s primary energy source. Fat aids in the integrity of cell membranes, the storage of energy, the protection of organs, the production of certain hormones, and the absorption of fat-soluble vitamins. The main role of protein is to maintain lean body mass, develop new tissues, and repair existing ones. In terms of macronutrients, numerous diet recommendations have been made to maintain health and prevent diseases (Flat, 2001). According to Ryan-Harshman & Aldoori (2006), most dietary references suggest that adults in general should consume 45% to 65% of their calories from carbohydrates, 20% to 35% from fat, and 10% to 35% from protein. 
 
-      
+Because of the controversial opinion on which diet is perceived as healthy (and if certain diets are even healthy to follow) the aim of this project is to create a large dataset in which recipes of various diets are displayed with the main macronutrients: carbohydrates, fats and proteins. Researchers can use this dataset to study the effect of certain diets on the health of consumers. Furthermore, marketeers can use the outcomes to discover patterns of macronutrients in the recipes of diets. This may help in improving the STP (Segmentation, Targeting, and Positioning) strategy of food manufacturing companies. Besides that, anyone who is interested in certain diets can extract information through the API about the recipe they are interested in.
+
+When looking for a source to get our data from, we researched several options online. In doing so, we looked at different websites for scrapping, as well as other ways to get data, such as APIs and datasets. We first looked at a very popular food diary app called Myfitnesspal. We tried looking on their website to see if data was publicly available, but we discovered that the data had to be obtained via an API, which is not free. We decided we needed to look wider to find the right data. We looked at other less popular food-tracking apps and websites, such as Fatsecret and Virtuagym, but we discovered that it is very difficult to scrape data from food-tracking apps, because the data is linked to personal data, and thus privacy issues can arise.
+
+With this, we decided to include APIs and datasets and look at less popular food-tracking/nutritional websites from the Netherlands. Our idea was that here we would have a higher chance that the API would be publicly available. We found several websites, but some had too few recipes available or no nutritional information. Eventually, it led us to the website https://www.edamam.com/, which has a large food database and recipe API. We searched the website on Google Trends and found that the website is most popular in France and the US. We searched further and discovered that it is possible to get free access to the API (https://developer.edamam.com/edamam-recipe-api) as a developer. In our case, we thought it would be easier to use the API as it saves time and avoids legal problems. 
+
+```{r table1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+| Data source | Data extraction | Free access | Sufficient number of recipes available | Nutrition information available
+|-----------------------|:---------:|--------:|---------------:|-------------:|
+| https://www.taste.com/ | Web scraping | Yes | No | Yes |
+| https://www.themealdb.com/ | API | Yes | No | No |
+| https://zestfuldata.com/ | API | Not for recipes | Yes | No |
+| https://tasty.co/ | Web scraping | Yes | Yes | Yes |
+| https://www.edamam.com/ | API | Yes | Yes | Yes |
+| https://www.yummly.com/ | API | No | Yes | Need premium account |
+| https://www.bigoven.com/ | Web scraping | Yes | Yes | Need premium account |
+| https://www.fatsecret.com/ | API | Yes | No | Yes, but only per product |
+| https://www.nutritionix.com/ | API | Yes | No | Yes, but only per product |
+| https://www.hellofresh.com/ | Web scraping | Yes | Hard to filter per diet | Yes |
+"
+cat(tabl)
+```
+
 ### 1.2 Who created this dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)? ###
 
 The dataset is created by team 12 from the course of Online Data Collection and Management of the master Marketing Analytics of Tilburg University. The team consist of the following members; Anouk Bor, Bi Xuan Guo, Mandana Khabbazi and Indi Wieggers. The instructor for the course and the project is Hannes Datta. 
@@ -29,7 +52,6 @@ The dataset is created by team 12 from the course of Online Data Collection and 
 ### 1.3 Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number. ###
 
 This dataset was not created with funding from any organization or individual. Due to this fact, the data extraction code and datasets created by this team are entirely autonomous and made available to the public.
-
 
 ## 2. Composition ##
 ### 2.1 What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? Are there multiple types of instances (e.g., movies, users, and ratings; people and interactions between them; nodes and edges)? Please provide a description. ###
@@ -39,21 +61,25 @@ Each instance in the dataset is a dinner recipe. These recipes will be categoriz
 ### 2.2 How many instances are there in total (of each type, if appropriate)? ###
 For all 5 recipes, there is a different number of recipes available. Table 1 below shows a calculation of the total number of recipes from which data is collected. The total number of instances in the dataframe are 34,898 in the latest API from Edamam. However, if the API changes, the number of instances can be altered. The API from Edamam has a limitation of maximum 10,000 calls a month and 10 calls per minute. One call from the Edamam API retrieves 20 recipes. Therefore, you will need 34,898/20 = 1744.9 requests to get data of all 5 recipes. Due to the limitation of the API, you need 1744.9/10/60 = 2.9 hours to gather all data. Since the number of requests required does not exceed the limit of 10,000 calls per month, the data can be easily collected with a single API key.
 
-
-```{r echo=FALSE}
-library(Matrix)
-tab <- matrix(c(2323, 10000, 10000, 4635, 7940, 34898), ncol=1, byrow=TRUE)
-colnames(tab) <- c('Numer of recipes available')
-rownames(tab) <- c('Keto', 'Vegan', 'Dash', 'Mediterranean', 'Paleo', 'Total number of instances')
-tab <- as.table(tab)
-tab
+```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+|                           | Number of recipes available |
+|---------------------------|:---------------------------:|
+| Keto                      | 2323                        |
+| Vegan                     | 10000                       |
+| Dash                      | 10000                       |
+| Mediterranean             | 4635                        |
+| Paleo                     | 7940                        |
+| Total number of instances | 34898                       |
+"
+cat(tabl)
 ```
 
 ### 2.3 Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). ###
 
 This dataset is a sample of the entire Edamam recipe API. The Recipe Search API (the endpoint this project uses) contains over 2.3 million recipes. As mentioned earlier, the dataset contains only recipe information of the search queries the diets we are interested in. All recipes of the five diets are collected, which means that the sample represent each diet independently. The total of 34,898 instances is not representative of the total Recipe Search API of 2.3 millions recipes, but this was not the goal of this data collection. The goal is to obtain data from each recipe of each diet independently.
 
-![figure1](fig/figure1.png)
+![Edamam's APIs.](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
@@ -78,9 +104,9 @@ Each instance, in this case each recipe, is labeled under *hits* and *recipe*. T
 
 ### 2.6 Is any information missing from individual instances? If so, please provide a description, explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information, but might include, e.g., redacted text. ###
 
-There is no information missing from individual instances, however, the number of calories in some recipes seems to be wrong. The number seems oddly high. (see the figure below for an example). Additionally, the data does not include a serving size, which could diminish the number of calories per serving. Thus, after checking the original source of the recipes there can be assumed that the information is not accurate, which means the number of calories is removed when creating a dataset from the API. This is to avoid spreading inaccurate information about recipes, which can lead to making wrong conclusions.
+There is no information missing from individual instances, however, the number of calories in some recipes seems to be wrong. The number seems oddly high (see Figure 2 for an example). Additionally, the data does not include a serving size, which could diminish the number of calories per serving. Thus, after checking the original source of the recipes there can be assumed that the information is not accurate, which means the number of calories is removed when creating a dataset from the API. This is to avoid spreading inaccurate information about recipes, which can lead to making wrong conclusions.
 
-![figure2](fig/figure2.png)
+![Example of the calories.](fig/figure2.png)
 
 ### 2.7 Are relationships between individual instances made explicit (e.g., users’ movie ratings, social network links)? If so, please describe how these relationships are made explicit. ###
 
@@ -117,7 +143,7 @@ As mentioned in the data collection, the API of Edamam was used to obtain the da
 
 ### 3.3 If the dataset is a sample from a larger set, what was the sampling strategy (e.g., deterministic, probabilistic with specific sampling probabilities)? ###
 
-The dataset is a sample from a larger set obtained through deterministic sampling. Based on the site of (PlanKetogenic, z.d.) which contains the most researched diets worldwide, the most popular diets in the countries who use Edamam the most, were chosen and filtered for the dataset. For each diet the dataset is filtered on the macronutrients fats, carbs and proteins to be able to see how many grams each recipe contains. The data set is also filtered on lunch/dinner, the reason behind this filter is because intermediate fasting (in which a person consumes their food between 12pm and 8am) has become very popular in the last few years (Mohiuddin, 2018; Snyder, 2022). This means people more often are choosing to skip breakfast, so lunch/dinner seemed like a more useful meal type to extract information from. The cuisine type is also added in order to see from which cuisine the recipe originates. The dataset has been filtered for the first 8000 diets because the programs used (Jupyter Notebook and Anaconda) were not able to run the script otherwise due to license issues. Unfortunately, this makes it not possible to automate the script. The scraper however provides comments of what to do to get the csv file in which the nutrition information of all diets are combined. This also makes it easier for future users of the scraper, because there is a guide on how to add the diets to the scraper one is interested in. 
+The dataset is a sample from a larger set obtained through deterministic sampling. Based on the site of (PlanKetogenic, z.d.) which contains the most researched diets worldwide, the most popular diets in the countries who use Edamam the most, were chosen and filtered for the dataset. For each diet, the dataset was filtered for the macronutrients fats, carbohydrates and proteins to see how many grams each recipe contains. The data set was also filtered by lunch/dinner. The reason behind this is because intermediate fasting (in which a person consumes their food between 12pm and 8am) has become very popular in the last few years (Mohiuddin, 2018; Snyder, 2022). This means that people more often are choose to skip breakfast, so lunch/dinner seemed a more useful meal type to extract information from. The cuisine type is also added in order to see from which cuisine the recipe originates. The dataset has been filtered for the first 8000 diets because the programs used (Jupyter Notebook and Anaconda) were not able to run the script otherwise due to license issues. Unfortunately, this does not make it possible to automate the script. However, the scraper comments on what one needs to do to get the csv file that aggregates the nutritional information of all the diets. This also makes it easier for future users of the scraper, as there is a guide on how to add the diets to the scraper one is interested in. 
 
 
 ### 3.4	Who was involved in the data collection process (e.g., students, crowdworkers, contractors) and how were they compensated (e.g., how much were crowdworkers paid)? ###
@@ -147,7 +173,7 @@ Labels were created for meal type and cuisine type. There were no missing values
 
 ### 4.2	Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data. ###
 
-The raw data have been saved in multiple files, according to the diets. The files for this datacollection are: 'keto_raw_data.json', 'dash_raw_data.json', 'vegan_raw_data.json', 'paleo_raw_data.json', and 'mediterranean_raw_data.json'.
+Due to the large size of the data (files), only the raw data of the paleo diet have been stored. These are contained in the file 'paleo_raw_data.json'. One can print out data from the other diets using the code.
 
 ### 4.3	Is the software used to preprocess/clean/label the instances available? If so, please provide a link or other access point. ###
 
