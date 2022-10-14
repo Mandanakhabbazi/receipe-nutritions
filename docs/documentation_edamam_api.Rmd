@@ -22,7 +22,7 @@ Because of the controversial opinion on which diet is perceived as healthy (and 
 
 When looking for a source to get our data from, we researched several options online. In doing so, we looked at different websites for scrapping, as well as other ways to get data, such as APIs and datasets. We first looked at a very popular food diary app called Myfitnesspal. We tried looking on their website to see if data was publicly available, but we discovered that the data had to be obtained via an API, which is not free. We decided we needed to look wider to find the right data. We looked at other less popular food-tracking apps and websites, such as Fatsecret and Virtuagym, but we discovered that it is very difficult to scrape data from food-tracking apps, because the data is linked to personal data, and thus privacy issues can arise.
 
-With this, we decided to include APIs and datasets and look at less popular food-tracking/nutritional websites from the Netherlands. Our idea was that here we would have a higher chance that the API would be publicly available. We found several websites, but some had too few recipes available or no nutritional information. Eventually, it led us to the website https://www.edamam.com/, which has a large food database and recipe API. We searched the website on Google Trends and found that the website is most popular in France and the US. We searched further and discovered that it is possible to get free access to the API (https://developer.edamam.com/edamam-recipe-api) as a developer. In our case, we thought it would be easier to use the API as it saves time and avoids legal problems.
+With this, we decided to include APIs and datasets and look at less popular food-tracking/nutritional websites from the Netherlands. Our idea was that here we would have a higher chance that the API would be publicly available. We found several websites, but some had too few recipes available or no nutritional information. Eventually, it led us to the website https://www.edamam.com/, which has a large food database and recipe API. We searched the website on Google Trends and found that the website is most popular in France and the US. We searched further and discovered that it is possible to get free access to the API (https://developer.edamam.com/edamam-recipe-api) as a developer. In our case, we thought it would be easier to use the API as it saves time and avoids legal problems. 
 
 ```{r table1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
@@ -76,7 +76,7 @@ cat(tabl)
 
 This dataset is a sample of the entire Edamam recipe API. The Recipe Search API (the endpoint this project uses) contains over 2.3 million recipes. As mentioned earlier, the dataset contains only recipe information of the search queries the diets we are interested in. All recipes of the five diets are collected, which means that the sample represent each diet independently. The total of 34,898 instances is not representative of the total Recipe Search API of 2.3 millions recipes, but this was not the goal of this data collection. The goal is to obtain data from each recipe of each diet independently.
 
-![figure1](fig/figure1.png)
+![Edamam's APIs.](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
@@ -101,9 +101,9 @@ Each instance, in this case each recipe, is labeled under *hits* and *recipe*. T
 
 ### 2.6 Is any information missing from individual instances? If so, please provide a description, explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information, but might include, e.g., redacted text. ###
 
-There is no information missing from individual instances, however, the number of calories in some recipes seems to be wrong. The number seems oddly high. (see the figure below for an example). Additionally, the data does not include a serving size, which could diminish the number of calories per serving. Thus, after checking the original source of the recipes there can be assumed that the information is not accurate, which means the number of calories is removed when creating a dataset from the API. This is to avoid spreading inaccurate information about recipes, which can lead to making wrong conclusions.
+There is no information missing from individual instances, however, the number of calories in some recipes seems to be wrong. The number seems oddly high (see Figure 2 for an example). Additionally, the data does not include a serving size, which could diminish the number of calories per serving. Thus, after checking the original source of the recipes there can be assumed that the information is not accurate, which means the number of calories is removed when creating a dataset from the API. This is to avoid spreading inaccurate information about recipes, which can lead to making wrong conclusions.
 
-![figure2](fig/figure2.png)
+![Example of the calories.](fig/figure2.png)
 
 ### 2.7 Are relationships between individual instances made explicit (e.g., users’ movie ratings, social network links)? If so, please describe how these relationships are made explicit. ###
 
