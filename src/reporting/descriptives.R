@@ -1,7 +1,7 @@
 library(readr)
 library(dplyr)
 
-setwd("~/Documents/Master/Blok 1/ODCM diets/recipe-nutritions/data")
+setwd("../recipe-nutritions/data")
 Edamam_data <- read_csv('All_diets.csv')
 
 View(Edamam_data)
