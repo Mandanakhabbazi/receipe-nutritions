@@ -2,7 +2,10 @@
 title: "Documentation Recipe Macronutrients"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -153,7 +156,7 @@ For tokenisation, the steps were followed in the following link: https://tilburg
 ## 5. Uses ##
 ### 5.1	Has the dataset been used for any tasks already? If so, please provide a description. ###
 
-The dataset has not yet been used for any tasks, but is available for future use.
+The data set has not yet been used for any tasks, but is available for future use.
 
 ### 5.2	Is there a repository that links to any or all papers or systems that use the dataset? If so, please provide a link or other access point. ###
 
@@ -169,7 +172,7 @@ There is nothing that might impact future uses.
 
 ### 5.5	Are there tasks for which the dataset should not be used? If so, please provide a description. ###
 
-While the dataset can be used as a dietary guide, it should not be used as a sole guideline, as it focuses only on the macronutrients carbohydrates, fats and proteins. Consumers should keep in mind that there are more nutrients for healthy living, such as vitamins.
+While the data set can be used as a dietary guide, it should not be used as a sole guideline, as it focuses only on the macro-nutrients carbohydrates, fats and proteins. Consumers cannot tell from our dataset how many calories are in a serving of a recipe. In addition, the amounts of vitamins and minerals are also not listed with the recipes, even though they contribute a lot to a person's health. 
 
 ## 6. Sources ##
 
@@ -181,4 +184,4 @@ Ryan-Harshman, M., & Aldoori, W. (2006). New dietary reference intakes for macro
 
 World Health Organization. (2019). Healthy diet (No. WHO-EM/NUT/282/E). World Health Organization. Regional Office for the Eastern Mediterranean.
 
-PlanKetogenic. (z.d.). Geraadpleegd op 2 oktober 2022, van https://planketogenic.pro/en/blog/most-popular-diets+
+New Popular Diet Trends in 2022. (z.d.). Consulted on October 14th 2022, from https://planketogenic.pro/en/blog/most-popular-diets
