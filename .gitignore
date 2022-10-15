@@ -3,6 +3,6 @@
 .json
 */.json.
 *.csv
-.Rproj
+.Rproj.user
 *.Rhistory
 .gitkeep
