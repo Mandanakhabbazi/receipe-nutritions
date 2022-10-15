@@ -32,7 +32,7 @@ tabl <- "
 Table: Overview of data sources.
 
 | Data source | Data extraction | Free access | Sufficient number of recipes available | Nutrition information available
-|--------------------|:-------:|:------:|:-----------:|:-----------:|
+|--------------------|---------|-------|-------------|--------------|
 | https://www.taste.com/ | Web scraping | Yes | No | Yes |
 | https://www.themealdb.com/ | API | Yes | No | No |
 | https://zestfuldata.com/ | API | Not for recipes | Yes | No |
@@ -65,7 +65,7 @@ Different numbers of recipes are available for all five diets. Table 2 shows a c
 
 ```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
-Table: Number of instances available and actually collected per diet.
+Table: Number of instances available and actually collected.
 
 | Diet type     | Number of recipes available | Number of recipes collected |
 |---------------|:---------------------------:|:---------------------------:|
@@ -94,29 +94,139 @@ tabl <- "
 Table: Descriptive statistics macronutrients per diet.
 
 | Diet type     | Mean carbs | SD carbs | Mean fats | SD fats | Mean protein |  SD protein |
-|--------------:|:----------:|:--------:|:---------:|:-------:|:------------:|:-----------:|
-| DASH          | 161        | 206      | 101       | 134     | 69.3        | 91.5 |
-| Keto          | 58         | 78.1     | 153       | 116     | 101         | 98.9 |
-| Mediterranean | 153        | 165      | 101       | 97      | 101         | 93.9 |
-| Paleo         | 130        | 161      | 136       | 135     | 88.7        | 97.8 |
-| Vegan         | 254        | 223      | 103       | 120     | 56.2        | 47.2 |
+|---------------|------------|----------|-----------|---------|--------------|-------------|
+| DASH          | 161        | 206      | 101       | 134     | 69.3         | 91.5 |
+| Keto          | 58         | 78.1     | 153       | 116     | 101          | 98.9 |
+| Mediterranean | 153        | 165      | 101       | 97      | 101          | 93.9 |
+| Paleo         | 130        | 161      | 136       | 135     | 88.7         | 97.8 |
+| Vegan         | 254        | 223      | 103       | 120     | 56.2         | 47.2 |
 "
 cat(tabl)
 ```
 
-The code in the repository creates a dataset containing the health label, meal type, cuisine type and corresponding macronutrients for each recipe. The macronutrients are given in integer variables, allowing users to calculate with the numbers. The following tables explicitly list the variables used in the code. 
+The code creates a dataset containing the health label, meal type, cuisine type and corresponding macronutrients for each recipe. The macronutrients are given in integer variables, allowing users to calculate with the numbers. The following tables explicitly list the variables used in the code.
 
-ADD TABLES
+```{r table4, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+Table: Nutrient structure.
 
-![Table1](fig/Nutrientstructure.png) 
-![Table2](fig/Ingredientstructure.png) 
-![Table3](fig/Healthlabels1.png)
-![Table4](fig/Healthlabels2.png) 
-![Table5](fig/Healthlabels3.png) 
-![Table6](fig/Healthlabels4.png) 
-![Table7](fig/Mealtypes.png) 
-![Table8](fig/Cuisinetype1.png) 
-![Table9](fig/Cuisinetype2.png) 
+| Variable | Data type | Description                 |
+|----------|-----------|-----------------------------|
+| uri      | String    | Ontology identifier         |
+| label    | String    | Display label               |
+| quantity | Float     | Quantity of specified units |
+| unit     | String    | Units                       |
+"
+cat(tabl)
+```
+
+```{r table5, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+Table: Ingredrient structure.
+
+| Variable     | Data type | Description                   |
+|--------------|-----------|-------------------------------|
+| foodId       | String    | Food identifier               |
+| quantity     | Float     | Quantity of specified measure |
+| measure      | Measure   | Measure                       |
+| weight       | Float     | Total weight in grams         |
+| food         | Food      | Food                          |
+| foodCategory | String    | Shopping aisle category       |
+"
+cat(tabl)
+```
+
+```{r table6, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+Table: Health labels.
+
+| Type  | Web label       | API Parameter  | Definition |
+|-----|---------|---------|---------------------------|
+| Health | Alcohol-Cocktail	 | alcohol-cocktail |	Describes an alcoholic cocktail
+| Health | Alcohol-Free	     | alcohol-free	    | No alcohol used or contained
+| Health | Celery-Free       | celery-free      | Does not contain celery or derivatives
+| Health | Crustcean-Free    | crustacean-free  |	Does not contain crustaceans (shrimp, lobster etc.) or derivatives
+| Health | Dairy-Free	       | dairy-free	      | No dairy; no lactose
+| Health | DASH	             | DASH	            | Dietary Approaches to Stop Hypertension diet
+| Health | Egg-Free	         | egg-free	| No eggs or products containing eggs
+| Health | Fish-Free         | fish-free | No fish or fish derivatives
+| Health | FODMAP-Free       | fodmap-free | Does not contain FODMAP foods
+| Health | Gluten-Free       | gluten-free | No ingredients containing gluten
+| Health | Immuno-Supportive | immuno-supportive | Recipes which fit a science-based approach to eating to strengthen the immune system
+| Health | Keto-Friendly     | keto-friendly | Maximum 7 grams of net carbs per serving
+| Health | Kidney-Friendly   | kidney-friendly | Per serving – phosphorus less than 250 mg AND potassium less than 500 mg AND sodium less than 500 mg
+| Health | Kosher	           | kosher	| Contains only ingredients allowed by the kosher diet. However it does not guarantee kosher preparation of the ingredients themselves
+| Health | Low Potassium     | low-potassium | Less than 150mg per serving
+| Health | Low Sugar         | low-sugar | No simple sugars – glucose, dextrose, galactose, fructose, sucrose, lactose, maltose
+| Health | Lupine-Free       | lupine-free | Does not contain lupine or derivatives
+| Health | Mediterranean     | Mediterranean | Mediterranean diet
+| Health | Mollusk-Free      | mollusk-free | No mollusks
+| Health | Mustard-Free	     | mustard-free | Does not contain mustard or derivatives
+| Health | No oil added      | No-oil-added | No oil added except to what is contained in the basic ingredients
+| Health | Paleo             | paleo | Excludes what are perceived to be agricultural products; grains, legumes, dairy products, potatoes, refined salt, refined sugar, and processed oils
+| Health | Peanut-Free       | peanut-free | No peanuts or products containing peanuts
+| Health | Pescatarian       | pecatarian	| Does not contain meat or meat based products, can contain dairy and fish
+| Health | Pork-Free         | pork-free | Does not contain pork or derivatives
+| Health | Red-Meat-Free     | red-meat-free | Does not contain beef, lamb, pork, duck, goose, game, horse, and other types of red meat or products containing red meat.
+| Health | Sesame-Free       | sesame-free | Does not contain sesame seed or derivatives
+| Health | Shellfish-Free  	 | shellfish-free | No shellfish or shellfish derivatives
+| Health | Soy-Free	         | soy-free | No soy or products containing soy
+| Health | Sugar-Conscious   | sugar-conscious | Less than 4g of sugar per serving
+| Health | Sulfite-Free	     | sulfite-free | No Sulfites
+| Health | Tree-Nut-Free     | tree-nut-free | No tree nuts or products containing tree nuts
+| Health | Vegan             | vegan | No meat, poultry, fish, dairy, eggs or honey
+| Health | Vegetarian	       | vegetarian | No meat, poultry, or fish
+| Health | Wheat-Free	       | wheat-free | No wheat, can have gluten though
+"
+cat(tabl)
+```
+
+```{r table7, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+Table: Meal types.
+
+| Type      | Value        |
+|-----------|--------------|
+| mealType	| breakfast    |
+| mealType	| brunch       |
+| mealType	| lunch/dinner |
+| mealType	| snack        |
+| mealType	| teatime      |
+"
+cat(tabl)
+```
+
+```{r table8, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+Table: Cuisine types.
+
+| Type      | Value        |
+|-----------|--------------|
+| cuisineType	| american |
+| cuisineType	| asian	|
+| cuisineType	| british	|
+| cuisineType	| caribbean	|
+| cuisineType	| central europe |
+| cuisineType	| chinese |
+| cuisineType	| eastern europe |
+| cuisineType	| french |
+| cuisineType	| greek |
+| cuisineType	| indian |
+| cuisineType	| italian |
+| cuisineType	| japanese |
+| cuisineType	| korean |
+| cuisineType	| kosher |
+| cuisineType	| mediterranean |
+| cuisineType	| mexican |
+| cuisineType	| middle eastern |
+| cuisineType	| nordic |
+| cuisineType	| south american |
+| cuisineType	| south east asian |
+| cuisineType	| world |
+"
+cat(tabl)
+```
+
 ### 2.5 Is there a label or target associated with each instance? If so, please provide a description. ###
 Each instance, in this case each recipe, is labeled under *hits* and *recipe*. This is the same for each dataset per diet.
 
