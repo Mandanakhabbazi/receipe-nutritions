@@ -87,9 +87,7 @@ This dataset is a sample of the entire Edamam recipe API. The Recipe Search API 
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
-For the raw data, 34,898 instances were collected. The raw data was stored in a .json output for further processing. 
-
-The code in the repository creates a dataset containing the health label, meal type, cuisine type and corresponding macronutrients for each recipe. The macronutrients are given in integer variables, allowing users to calculate with the numbers. The following tables explicitly list the variables used in the code. 
+For the raw data, 34,898 instances were collected. The raw data was stored in a .json output for further processing. Table 3 contains the descriptive statistics of the diets.
 
 ```{r table3, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
@@ -105,6 +103,8 @@ Table: Descriptive statistics diets.
 "
 cat(tabl)
 ```
+
+The code in the repository creates a dataset containing the health label, meal type, cuisine type and corresponding macronutrients for each recipe. The macronutrients are given in integer variables, allowing users to calculate with the numbers. The following tables explicitly list the variables used in the code. 
 
 ADD TABLES
 
@@ -164,7 +164,7 @@ Note that the script can specify which diets the data is scraped from. The numbe
 
 Unfortunately, our team encountered technical problems when scaling up the data collection. For each diet, an error appeared for a particular line (in the range of 1275-1754) when trying to extract more data. An example of the error is shown in Figure 3. The debugging phase consisted of looking up the error online, whether other users of this API had the same problems, and trying to parse these specific lines in the .json files. However, we could not figure out what caused this error. Our guess is that it has to do with the output of the .json files becoming too large. Although we failed to collect data from all instances, our dataset is still large enough and contains enough information to use.
 
-![Example of the error when scaling data collection.](fig/figure3.jpeg)
+![Example of the error in scaling up data collection.](fig/figure3.jpeg)
 
 ### 3.2	What mechanisms or procedures were used to collect the data (e.g., hardware apparatus or sensor, manual human curation, software program, software API)? How were these mechanisms or procedures validated? ###
 
