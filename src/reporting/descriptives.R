@@ -14,9 +14,9 @@ nrow(Edamam_data)
 
 Edamam_data %>% 
     group_by(Diet_type) %>% 
-    summarize(meanProtein = mean(`Protein(g)`),
-              SDProtein = sd(`Protein(g)`),
+    summarize(meanCarbs = mean(`Carbs(g)`),
+              SDCarbs = sd(`Carbs(g)`),
               meanFat = mean(`Fat(g)`),
               SDFat = sd(`Fat(g)`),
-              meanCarbs = mean(`Carbs(g)`),
-              SDCarbs = sd(`Carbs(g)`))
+              meanProtein = mean(`Protein(g)`),
+              SDProtein = sd(`Protein(g)`))
