@@ -1,7 +1,7 @@
 ---
 title: "Documentation Recipe Macronutrients"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output:
   pdf_document: default
   html_document:
@@ -117,9 +117,6 @@ ADD TABLES
 ![Table7](fig/Mealtypes.png) 
 ![Table8](fig/Cuisinetype1.png) 
 ![Table9](fig/Cuisinetype2.png) 
-```{r}
-```
-
 ### 2.5 Is there a label or target associated with each instance? If so, please provide a description. ###
 Each instance, in this case each recipe, is labeled under *hits* and *recipe*. This is the same for each dataset per diet.
 
@@ -139,7 +136,7 @@ The .json file contains all the collected raw data. A recommended data split cou
 
 ### 2.9 Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)? If it links to or relies on external resources, a) are there guarantees that they will exist, and remain constant, over time; b) are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created); c) are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate. ###
 
-Each instance in the Edamam API is linked to an external source, namely a website URL. There is no guarantee that the external websites will persist over time, but all relevant information is present in the dataset. This means that when an external source is removed, no data is lost from the API, because the data collected and the output table are completely dependent on the Edamam API.
+Each instance in the Edamam API is linked to an external resource, namely a website URL. There is no guarantee that the external websites will persist over time, as Edamam reserves the right to update, modify or alter the Edamam API. However, Edamam will endeavour to announce such updates, modifications, or alterations in advance which will also allow the dataset to undergo necessary updates, changes or modifications. And even if an external source is removed, no data is lost from the API, as the dataset is entirely dependent on the Edamam API. As of `r format(Sys.Date(), "%B %d, %Y")`, there are no restrictions (e.g. licences, fees) on the external resources that could apply to a future user.
 
 ### 2.10 Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals non-public communications)? If so, please provide a description. ###
 
@@ -222,11 +219,13 @@ Researchers can use this dataset to study the effect of the five diets on consum
 
 ### 5.4	Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a future user might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other undesirable harms (e.g., financial harms, legal risks) If so, please provide a description. Is there anything a future user could do to mitigate these undesirable harms? ###
 
-As far as we know, there is nothing about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses.
+How the data is pre-processed is crucial. As mentioned, confidential information should be tokenised by configuring environment variables. As far as we know, there is nothing else about the composition of the dataset or how it was collected and pre-processed/cleaned/labelled that could affect future use.
 
 ### 5.5	Are there tasks for which the dataset should not be used? If so, please provide a description. ###
 
 While the data set can be used as a dietary guide, it should not be used as a sole guideline, as it focuses only on the macro-nutrients carbohydrates, fats and proteins. Moreover, consumers cannot tell from our dataset how many calories are in a serving of a recipe. In addition, the amounts of vitamins and minerals are also not listed with the recipes, even though they contribute a lot to a person's health.
+
+The dataset is provided using the free version of the Edamam API and is intended for personal or non-profit use. Thereafter, it is prohibited to use the free version of the Edamam API in connection with any commercial or business purpose or in any manner that is commercial or business oriented without the express permission of Edamam.
 
 ## 6. Sources ##
 
