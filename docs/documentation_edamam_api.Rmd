@@ -167,7 +167,7 @@ Unfortunately, our team encountered technical problems when scaling up the data 
 
 As mentioned in the data collection, the API of Edamam was used to obtain the data of the different recipes of the diets. In order to validate this data, the different recipes and their labels and macronutrients were compared with the recipe on the site of Edamam. We also compared the recipe with the original site offered within the API.  
 
-We scraped the data using the web application Jupyter Notebooks launched by Anaconda Navigator. Loading the packages requests, json, pandas, pickle, time and os allowed us to use functions that enabled our data collection steps.
+We scraped the data using the web application Jupyter Notebooks launched by Anaconda Navigator. Loading the packages requests, json, pandas, time and os allowed us to use functions that enabled our data collection steps.
 
 ### 3.3 If the dataset is a sample from a larger set, what was the sampling strategy (e.g., deterministic, probabilistic with specific sampling probabilities)? ###
 
