@@ -61,40 +61,40 @@ This dataset was not created with funding from any organization or individual. D
 Each instance in the dataset is a lunch/dinner recipe. These recipes are categorised into the five most popular diets for the users from https://www.edamam.com/. The users who use the Edamam site most frequently are located in Canada, Germany, France, the United Kingdom and India. The following diets are generally the most popular in the above countries (more on this in section 3.3); Keto diet, Mediterranean diet, Paleo diet, DASH diet and Vegan diet. The diets have multiple types of instances, including the macronutrients. These are categorized as fat, protein and carbohydrates (carbs). For each recipe, the macronutrients are listed in the database.
 
 ### 2.2 How many instances are there in total (of each type, if appropriate)? ###
-Different numbers of recipes are available for all five diets. Table 2 shows a calculation of the total number of recipes from which data is collected. The total number of instances in the dataframe is 34,898 in Edamam's latest API. However, if the API changes, the number of instances can be altered. The API from Edamam has a limitation of a maximum of 10,000 calls per month and 10 calls per minute. One call from the Edamam API retrieves 20 recipes. Therefore, it takes 34,898/20 = 1744.9 requests to retrieve the data of all five diets. Due to the limitation of the API, it takes 1744.9/10/60 = 2.9 hours to gather all data. Since the number of requests required does not exceed the limit of 10,000 calls per month, the data can be easily collected with a single API key.
+Different numbers of recipes are available for all five diets. Table 2 shows a calculation of the total number of recipes available and the total number of recipes actually collected. The total number of instances in the dataframe is 34,898 in Edamam's latest API. However, if the API changes, the number of instances can be altered. The API from Edamam has a limitation of a maximum of 10,000 calls per month and 10 calls per minute. One call from the Edamam API retrieves 20 recipes. Therefore, it takes 34,898/20 = 1744.9 requests to retrieve the data of all five diets. Due to the limitation of the API, it takes 1744.9/10/60 = 2.9 hours to gather all data. Since the number of requests required does not exceed the limit of 10,000 calls per month, the data can be easily collected with a single API key. Although our goal was to retrieve all available instances, our team encountered technical difficulties in scaling up the data collection, which are detailed in section 3.1. Thus, the actual number of instances collected  differs from what is available.
 
 ```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
-Table: Number of instances.
+Table: Number of instances available and actually collected per diet.
 
-|                           | Number of recipes available |
-|---------------------------|:---------------------------:|
-| DASH                      | 10000                       |
-| Keto                      | 2323                        |
-| Mediterranean             | 4635                        |
-| Paleo                     | 7940                        |
-| Vegan                     | 10000                       |
-| Total                     | 34898                       |
+| Diet type     | Number of recipes available | Number of recipes collected |
+|---------------|:---------------------------:|:---------------------------:|
+| DASH          | 10000                       | 1745                        |
+| Keto          | 2323                        | 1512                        |
+| Mediterranean | 4635                        | 1753                        |
+| Paleo         | 7940                        | 1274                        |
+| Vegan         | 10000                       | 1522                        |
+| Total         | 34898                       | 7806                        |
 "
 cat(tabl)
 ```
 
 ### 2.3 Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). ###
 
-This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. All recipes of the five diets are collected, which means that the sample represent each diet independently. The total of 34,898 instances is not representative of the total Recipe Search API of 2.3 millions recipes. However, this was also not the purpose of this data collection. In fact, the aim was to obtain data from each recipe of each diet separately.
+This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. An attempt was made to collect all recipes from the five diets so that the sample represents each diet separately. However, a total of 7,806 instances were collected out of a total of 34,898 possible instances. Therefore, the sample may not be representative of the larger set, because instances are no longer collected when scaling up the data collection.
 
 ![Edamam's APIs.](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
-For the raw data, 34,898 instances were collected. The raw data was stored in a .json output for further processing. Table 3 contains the descriptive statistics of the diets.
+For the raw data, 7,806 instances were collected. The raw data is stored in a .json output for further processing. Table 3 contains the descriptive statistics of the five diets.
 
 ```{r table3, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
-Table: Descriptive statistics diets.
+Table: Descriptive statistics macronutrients per diet.
 
 | Diet type     | Mean carbs | SD carbs | Mean fats | SD fats | Mean protein |  SD protein |
-|---------------|:----------:|:--------:|:---------:|:-------:|:------------:|:-----------:|
+|--------------:|:----------:|:--------:|:---------:|:-------:|:------------:|:-----------:|
 | DASH          | 161        | 206      | 101       | 134     | 69.3        | 91.5 |
 | Keto          | 58         | 78.1     | 153       | 116     | 101         | 98.9 |
 | Mediterranean | 153        | 165      | 101       | 97      | 101         | 93.9 |
@@ -156,7 +156,7 @@ The dataset does not relate to people. Therefore, questions 2.12 to 2.15 were no
 ## 3. Collection Process ##
 ### 3.1 How was the data associated with each instance acquired? Was the data directly observable (e.g., raw text, movie ratings), reported by subjects (e.g., survey responses), or indirectly inferred/derived from other data (e.g., part-of-speech tags, model-based guesses for age or language)? If data was reported by subjects or indirectly inferred/derived from other data, was the data validated/verified? If so, please describe how. ###
 
-The data of each instance is directly observable as raw text and accessed using Edamam's API. The entire collection process consists of several steps and is stored in a script with written code in '*src/collection/database_recipe_API.py*'.
+The data of each instance is directly observable as raw text and accessed using Edamam's API. The entire collection process consists of several steps and is stored in a script with written code in '*src/collection/database_recipe_API.py*' and '*src/collection/database_recipe_API.ipynb*'.
 
 First, the script creates a .json file that collects all the raw data for a diet. This can be done for any diet, and in this case, five separate .json files are created for the five diets. Next, all the recipes for a diet are extracted using a while loop, ensuring that the code gets 6 seconds of sleep due to the limitation of 10 calls per minute mentioned in section 2.2. After this, the code extracts the macronutrients from all recipes. Again, the sleep time is set to 6 seconds because of the limitation. In addition, the script creates a separate CSV file to have a clear overview of the macronutrient information for each recipe. Once more, separate files are created for each diet, creating a total of five CSV files to see which recipe belongs to which diet. To put everything together, the code merges the different CSV files into one big CSV file with information from all five diets. Finally, the "pandas" package was used to structure the data into a large table (dataframe) with all variables of interest.
 
@@ -195,9 +195,9 @@ The dataset does not relate to people, because the Edamam API does not contain a
 ## 4. Preprocessing, cleaning, labeling ##
 ### 4.1 Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remainder of the questions in this section. ###
 
-As mentioned, raw data was gathered using the API and stored in CSV files. To obtain the final dataset, we carried out several preprocessing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the database without exposing the sensitive information. This was done by configuring environment variables.
+As mentioned, raw data was gathered using the API and stored in CSV files. To obtain the final dataset, we carried out several preprocessing steps. First, it is important to note that tokenisation must be used for the API key. The API key contains sensitive data that must be converted into non-sensitive data, called "tokens", to be used in the script without exposing the sensitive information. This was done by configuring environment variables.
 
-There were no missing values in the raw data, so no missing values were removed. As previously explained, calorie counts did not seem reliable, hence they were not included in the dataset. Recipe time was not added to the dataset because the focus of this dataset is on macronutrients and to show users how many grams they consume when making a particular recipe. Therefore, micronutrients were also not included. Labels were created for diet type, recipe name, cuisine type and the amounts of proteins, carbohydrates and fats in grams, respectively. The final dataset consists of merging the different CSV files of the diets, which is stored in the file 'All_Diets.csv'.
+There were no missing values in the raw data, so no missing values were removed. As previously explained, calorie counts did not seem reliable, hence they were not included in the dataset. Micronutrients were not added to the dataset as it focuses on macronutrients. Labels were created for diet type, recipe name, cuisine type and the amounts of proteins, carbohydrates and fats in grams, respectively. The final dataset consists of merging the different CSV files of the diets, which is stored in the file 'All_Diets.csv'.
 
 ### 4.2	Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data. ###
 
@@ -218,11 +218,11 @@ There is no repository available yet for papers and systems that use the data sc
 
 ### 5.3	What (other) tasks could the dataset be used for? ###
 
-Researchers can use this dataset to study the effect of the five diets on consumer health. Furthermore, marketeers can use the outcomes to discover patterns of macronutrients in the diets' recipes. This can help improve food producers' STP (Segmentation, Targeting, and Positioning) strategy. Although this dateset focuses only on the diets Keto, vegan, DASH, Mediterranean and Paleo, one can in fact create datasets of any diet one is interested in, as the script allows to define the diet one wants to scrape and is not limited to the five diets used in this project.
+Researchers can use this dataset to study the effect of the five diets on consumer health. Furthermore, marketeers can use the outcomes to discover patterns of macronutrients in the diets' recipes. This can help improve food producers' STP (Segmentation, Targeting, and Positioning) strategy. Although this dateset focuses only on the diets Keto, vegan, DASH, Mediterranean and Paleo, one can in fact create datasets of any diet one is interested in, as the script allows to define the diet one wants to scrape and is not limited to the five diets used in this project. This allows researchers and marketers to explore other diets as well.
 
 ### 5.4	Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a future user might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other undesirable harms (e.g., financial harms, legal risks) If so, please provide a description. Is there anything a future user could do to mitigate these undesirable harms? ###
 
-There is nothing that might impact future uses.
+As far as we know, there is nothing about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses.
 
 ### 5.5	Are there tasks for which the dataset should not be used? If so, please provide a description. ###
 
