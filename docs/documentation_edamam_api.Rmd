@@ -61,7 +61,7 @@ This dataset was not created with funding from any organization or individual. D
 Each instance in the dataset is a lunch/dinner recipe. These recipes are categorised into the five most popular diets for the users from https://www.edamam.com/. The users who use the Edamam site most frequently are located in Canada, Germany, France, the United Kingdom and India. The following diets are generally the most popular in the above countries (more on this in section 3.3); Keto diet, Mediterranean diet, Paleo diet, DASH diet and Vegan diet. The diets have multiple types of instances, including the macronutrients. These are categorized as fat, protein and carbohydrates (carbs). For each recipe, the macronutrients are listed in the database.
 
 ### 2.2 How many instances are there in total (of each type, if appropriate)? ###
-Different numbers of recipes are available for all five diets. Table 2 shows a calculation of the total number of recipes available and the total number of recipes actually collected. The total number of instances in the dataframe is 34,898 in Edamam's latest API. However, if the API changes, the number of instances can be altered. The API from Edamam has a limitation of a maximum of 10,000 calls per month and 10 calls per minute. One call from the Edamam API retrieves 20 recipes. Therefore, it takes 34,898/20 = 1744.9 requests to retrieve the data of all five diets. Due to the limitation of the API, it takes 1744.9/10/60 = 2.9 hours to gather all data. Since the number of requests required does not exceed the limit of 10,000 calls per month, the data can be easily collected with a single API key. Although our goal was to retrieve all available instances, our team encountered technical difficulties in scaling up the data collection, which are detailed in section 3.1. Thus, the actual number of instances collected  differs from what is available.
+Different numbers of recipes are available for all five diets. Table 2 shows a calculation of the total number of recipes available and the total number of recipes actually collected. The total number of instances in the dataframe is 34,898 in Edamam's latest API. However, if the API changes, the number of instances can be altered. The API from Edamam has a limitation of a maximum of 10,000 calls per month and 10 calls per minute. One call from the Edamam API retrieves 20 recipes. Therefore, it takes 34,898/20 = 1744.9 requests to retrieve the data of all five diets. Due to the limitation of the API, it takes 1744.9/10/60 = 2.9 hours to gather all data. Since the number of requests required does not exceed the limit of 10,000 calls per month, the data can be easily collected with a single API key. Although our goal was to retrieve all available instances, our team encountered technical difficulties in scaling up the data collection, which are detailed in section 3.1. Thus, the actual number of instances collected  differs from what is available, as shown in Table 2.
 
 ```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
@@ -69,25 +69,25 @@ Table: Number of instances available and actually collected.
 
 | Diet type     | Number of recipes available | Number of recipes collected |
 |---------------|:---------------------------:|:---------------------------:|
-| DASH          | 10000                       | 1745                        |
+| DASH          | 10000                       | 1512                        |
 | Keto          | 2323                        | 1512                        |
 | Mediterranean | 4635                        | 1753                        |
 | Paleo         | 7940                        | 1274                        |
-| Vegan         | 10000                       | 1522                        |
-| Total         | 34898                       | 7806                        |
+| Vegan         | 10000                       | 1512                        |
+| Total         | 34898                       | 7563                        |
 "
 cat(tabl)
 ```
 
 ### 2.3 Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). ###
 
-This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. An attempt was made to collect all recipes from the five diets so that the sample represents each diet separately. However, a total of 7,806 instances were collected out of a total of 34,898 possible instances. Therefore, the sample may not be representative of the larger set, because instances are no longer collected when scaling up the data collection.
+This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. An attempt was made to collect all recipes from the five diets so that the sample represents each diet separately. However, a total of 7,563 instances were collected out of a total of 34,898 possible instances. Therefore, the sample may not be representative of the larger set, because instances are no longer collected when scaling up the data collection.
 
 ![Edamam's APIs.](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
-For the raw data, 7,806 instances were collected. The raw data is stored in a .json output for further processing. Table 3 contains the descriptive statistics of the five diets.
+For the raw data, 7,563 instances were collected. The raw data is stored in a .json output for further processing. Table 3 contains the descriptive statistics of the five diets.
 
 ```{r table3, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
@@ -269,7 +269,7 @@ First, the script creates a .json file that collects all the raw data for a diet
 
 Note that the script can specify which diets the data is scraped from. The number of diets scraped therefore depends on what the user of this scraper is interested in, so the number of CSV files generated may also vary.
 
-Unfortunately, our team encountered technical problems when scaling up the data collection. For each diet, an error appeared for a particular line (in the range of 1275-1754) when trying to extract more data. An example of the error is shown in Figure 3. The debugging phase consisted of looking up the error online, whether other users of this API had the same problems, and trying to parse these specific lines in the .json files. However, we could not figure out what caused this error. Our guess is that it has to do with the output of the .json files becoming too large. Although we failed to collect data from all instances, our dataset is still large enough and contains enough information to use.
+Unfortunately, our team encountered technical problems when scaling up the data collection. For each diet, an error appeared for a particular line when trying to extract more data. An example of the error is shown in Figure 3. The debugging phase consisted of looking up the error online, whether other users of this API had the same problems, and trying to parse these specific lines in the .json files. However, we could not figure out what caused this error. Our guess is that it has to do with the output of the .json files becoming too large. Although we failed to collect data from all instances, our dataset is still large enough and contains enough information to use.
 
 ![Example of the error in scaling up data collection.](fig/figure3.jpeg)
 
