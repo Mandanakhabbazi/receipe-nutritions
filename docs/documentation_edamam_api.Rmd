@@ -289,7 +289,7 @@ Only the students of this project were involved in the data collection process. 
 
 ### 3.5	Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created. ###
 
-The data collected for the project were collected in real time. They were collected in real time because they are available immediately after collection. Time stamps were added to represent the day and time when the data were collected. The final dataset was collected on 13 October and is stored in the file "All_Diets.csv".
+The data collected for the project were collected in real time. They were collected in real time because they are available immediately after collection. Time stamps were added to represent the day and time when the data were collected. The final dataset was collected on the 16th of October and is stored in the file "All_Diets.csv".
 
 ### 3.6 Were any ethical review processes conducted (e.g., by an institutional review board)? If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation. ###
 
