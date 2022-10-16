@@ -1,6 +1,6 @@
 ---
 title: "Documentation Recipe Macronutrients"
-author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
+author: "Anouk Bor, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output:
   pdf_document: default
@@ -69,25 +69,25 @@ Table: Number of instances available and actually collected.
 
 | Diet type     | Number of recipes available | Number of recipes collected |
 |---------------|:---------------------------:|:---------------------------:|
-| DASH          | 10000                       | 1512                        |
+| DASH          | 10000                       | 1745                        |
 | Keto          | 2323                        | 1512                        |
 | Mediterranean | 4635                        | 1753                        |
 | Paleo         | 7940                        | 1274                        |
-| Vegan         | 10000                       | 1512                        |
-| Total         | 34898                       | 7563                        |
+| Vegan         | 10000                       | 1522                        |
+| Total         | 34898                       | 7806                        |
 "
 cat(tabl)
 ```
 
 ### 2.3 Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable). ###
 
-This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. An attempt was made to collect all recipes from the five diets so that the sample represents each diet separately. However, a total of 7,563 instances were collected out of a total of 34,898 possible instances. Therefore, the sample may not be representative of the larger set, because instances are no longer collected when scaling up the data collection.
+This dataset is a sample of the entire Edamam recipe API. The Recipe Search API contains over 2.3 million recipes. As mentioned earlier, the dataset only contains recipe information from the diets we are interested in. An attempt was made to collect all recipes from the five diets so that the sample represents each diet separately. However, a total of 7,806 instances were collected out of a total of 34,898 possible instances. Therefore, the sample may not be representative of the larger set, because instances are no longer collected when scaling up the data collection.
 
 ![Edamam's APIs.](fig/figure1.png)
 
 ### 2.4 What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description. ###
 
-For the raw data, 7,563 instances were collected. The raw data is stored in a .json output for further processing. Table 3 contains the descriptive statistics of the five diets.
+For the raw data, 7,806 instances were collected. The raw data is stored in a .json output for further processing. Table 3 contains the descriptive statistics of the five diets.
 
 ```{r table3, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
